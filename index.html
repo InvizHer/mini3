@@ -13,7 +13,19 @@
             rel="stylesheet">
         <!--=============== CSS ===============-->
         <link rel="stylesheet" href="assets/css/styles.css">
-        <title>Mysteriza</title>
+        <style>
+        .visitor-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+        <title>Pavan Magar</title>
     </head>
     <body>
         <!--=============== HEADER PROFILE ===============-->
@@ -341,9 +353,23 @@
                 &#169; Pavan Magar. All rights reserved.
             </span>
         </footer>
+         <!-- SimpleHitCounter Visitor Counter -->
+    <script type="text/javascript" src="//simplehitcounter.com/js/154508"></script>
+    <!-- Visitor Counter Box -->
+    <div class="visitor-counter" id="visitor-counter">Loading...</div>
         <!--=============== SCROLLREVEAL ===============-->
         <script src="assets/js/scrollreveal.min.js"></script>
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
+        <script>
+        // Function to update visitor count
+        function updateVisitorCount(count) {
+            const visitorCounter = document.getElementById('visitor-counter');
+            visitorCounter.innerText = `Visitors: ${count}`;
+        }
+
+        // Execute the function with the initial count provided by SimpleHitCounter
+        updateVisitorCount(simplehitcounter.count);
+    </script>
     </body>
 </html>

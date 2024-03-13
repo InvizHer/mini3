@@ -12,9 +12,9 @@
       Teal: hsl(174, 63%, 62%)
   */
 
-  --hue: 207;
-  --sat: 90%;
-  --lig: 61%;
+  --hue: 250;
+  --sat: 66%;
+  --lig: 75%;
 
   --first-color: hsl(var(--hue), var(--sat), var(--lig));
   --first-color-alt: hsl(var(--hue), var(--sat), 58%); /* -4% */
@@ -269,7 +269,6 @@ body.dark-theme{
 }
 
 .button__small{
-  padding: .75rem;
   box-shadow: none;
 }
 

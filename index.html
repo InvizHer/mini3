@@ -15,20 +15,7 @@
         <link rel="stylesheet" href="assets/css/styles.css">
         <style>
         .visitor-counter {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-        }
-
-        .visitor-counter img {
-            margin-right: 10px;
+            display: none; /* Hide the visitor counter */
         }
     </style>
         <title>Pavan Magar</title>
@@ -354,19 +341,39 @@
             </section>
         </main>
         <!--=============== FOOTER ===============-->
-        <footer class="footer container">
-            <span class="footer__copy">
-                &#169; Pavan Magar. All rights reserved.
-            </span>
-         </footer>
-    <!-- Visitor Counter Box -->
-    <div class="visitor-counter">
-        <img src="https://counter11.optistats.ovh/private/freecounterstat.php?c=wek2upph5jp9yn3mc4qetzsqy46dyxfn" alt="Visitor Count">
-        <span>Loading...</span>
-    </div>
-    <!--=============== SCROLLREVEAL ===============-->
+       <footer class="footer container">
+        <span class="footer__copy">
+            &#169; Pavan Magar. All rights reserved.
+        </span>
+        <!-- Display the visit count in the footer -->
+        <span id="visit-count"></span>
+    </footer>
+    <!-- FreeCounterStat Visitor Counter -->
+    <div id="sfcbuqfrjzr4br3pxx4m66p25kgsy7yxw4n"></div>
+    <script type="text/javascript" src="https://counter11.optistats.ovh/private/counter.js?c=buqfrjzr4br3pxx4m66p25kgsy7yxw4n&down=async" async></script>
+    <!-- Fetch and update visit count -->
+    <script>
+        // Function to update visit count
+        function updateVisitCount(count) {
+            document.getElementById('visit-count').textContent = `Unique Visits: ${count}`;
+        }
+
+        // Function to fetch visit count
+        function fetchVisitCount() {
+            // You may need to replace the URL with the correct one from the counter service
+            fetch('https://counter11.optistats.ovh/private/getcount.php?c=buqfrjzr4br3pxx4m66p25kgsy7yxw4n')
+                .then(response => response.text())
+                .then(count => updateVisitCount(count))
+                .catch(error => console.error('Error fetching visit count:', error));
+        }
+
+        // Fetch visit count on page load
+        fetchVisitCount();
+    </script>
+        <!--=============== SCROLLREVEAL ===============-->
     <script src="assets/js/scrollreveal.min.js"></script>
     <!--=============== MAIN JS ===============-->
+        // Function to update visit count
     <script src="assets/js/main.js"></script>
     </body>
 </html>

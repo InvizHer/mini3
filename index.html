@@ -13,6 +13,21 @@
             rel="stylesheet">
         <!--=============== CSS ===============-->
         <link rel="stylesheet" href="assets/css/styles.css">
+         <style>
+        .counter-container {
+            width: 200px; /* Adjust according to your image size */
+            height: auto;
+            position: relative;
+        }
+
+        #counter-img {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        #counter-img.loaded {
+            opacity: 1;
+        }
     </style>
         <title>Pavan Magar</title>
     </head>
@@ -49,13 +64,11 @@
                             </a>
                         </li>
                     </ul>
-                      <!-- hitwebcounter Code START -->
-<a href="https://www.hitwebcounter.com" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=11957064&style=0007&nbdigits=5&type=ip&initCount=100" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>                                    
-                                    
-                                        
-                                          
-                                               
+                    <div class="counter-container">
+        <a href="https://www.hitwebcounter.com" target="_blank" id="counter-link">
+            <img src="https://hitwebcounter.com/counter/counter.php?page=11957064&style=0007&nbdigits=5&type=ip&initCount=100" title="Counter Widget" alt="Visit counter For Websites" border="0" id="counter-img">
+        </a>
+    </div>                           
                                      
                 </div>
                 <div class="profile__info grid">
@@ -356,5 +369,13 @@
         <!--=============== SCROLLREVEAL ===============-->
     <script src="assets/js/scrollreveal.min.js"></script>
     <script src="assets/js/main.js"></script>
+        <script>
+        window.onload = function() {
+            var counterImg = document.getElementById('counter-img');
+            counterImg.onload = function() {
+                counterImg.classList.add('loaded');
+            };
+        };
+    </script>
     </body>
 </html>

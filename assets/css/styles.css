@@ -12,7 +12,7 @@
       Teal: hsl(174, 63%, 62%)
   */
 
-  --hue: 250;
+  --hue: 356;
   --sat: 66%;
   --lig: 75%;
 
@@ -323,7 +323,7 @@ body.dark-theme{
   width: 100%;
   height: 100%;
   border: 10px solid gainsboro;
-  border-radius: 50px;
+  border-radius: 30px;
 }
 
 .projects__modal{
@@ -333,7 +333,7 @@ body.dark-theme{
   bottom: 0;
   left: 0;
   border: 10px solid gainsboro;
-  border-radius: 50px;
+  border-radius: 30px;
   background: linear-gradient(180deg,
               hsla(var(--hue), 24%, 40%, .3) 0%,
               hsla(var(--hue), 24%, 4%, 1) 95%);

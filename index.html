@@ -353,23 +353,34 @@
                 &#169; Pavan Magar. All rights reserved.
             </span>
         </footer>
-         <!-- Free Web Counter Visitor Counter -->
-    <div style="display:none;"><a href="https://www.freecounterstat.com" title="web counter" target="_blank"><img src="https://counter11.optistats.ovh/private/freecounterstat.php?c=wek2upph5jp9yn3mc4qetzsqy46dyxfn" border="0" title="web counter" alt="web counter"></a></div>
+        <!-- FreeCounterStat Visitor Counter -->
+    <div id="sfcwek2upph5jp9yn3mc4qetzsqy46dyxfn"></div>
+    <script type="text/javascript" src="https://counter11.optistats.ovh/private/counter.js?c=wek2upph5jp9yn3mc4qetzsqy46dyxfn&down=async" async></script>
+    <noscript><a href="https://www.freecounterstat.com" title="free website counters"><img src="https://counter11.optistats.ovh/private/freecounterstat.php?c=wek2upph5jp9yn3mc4qetzsqy46dyxfn" border="0" title="free website counters" alt="free website counters"></a></noscript>
     <!-- Visitor Counter Box -->
     <div class="visitor-counter" id="visitor-counter">Loading...</div>
         <!--=============== SCROLLREVEAL ===============-->
         <script src="assets/js/scrollreveal.min.js"></script>
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
-        <script>
+         <script>
         // Function to update visitor count
         function updateVisitorCount(count) {
             const visitorCounter = document.getElementById('visitor-counter');
             visitorCounter.innerText = `Visitors: ${count}`;
         }
 
-        // Execute the function with the initial count provided by Free Web Counter
-        updateVisitorCount(0); // As the initial count is not available through Free Web Counter
+        // Function to fetch visitor count
+        function fetchVisitorCount() {
+            // You may need to replace the URL with the correct one from the counter service
+            fetch('https://counter11.optistats.ovh/private/getcount.php?c=wek2upph5jp9yn3mc4qetzsqy46dyxfn')
+                .then(response => response.text())
+                .then(count => updateVisitorCount(count))
+                .catch(error => console.error('Error fetching visitor count:', error));
+        }
+
+        // Fetch visitor count on page load
+        fetchVisitorCount();
     </script>
     </body>
 </html>

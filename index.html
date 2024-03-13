@@ -1,349 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--=============== FAVICON ===============-->
-        <link rel="shortcut icon" href="assets/img/my-avatar.png"
-            type="image/x-icon" class="favicon">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Header Section -->
+    <header class="container">
+        <h1>Your Name</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="change-theme" onclick="toggleTheme()">🌙</div>
+    </header>
 
-        <!--=============== REMIX ICONS ===============-->
-        <link
-            href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-            rel="stylesheet">
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="assets/css/styles.css">
-        <title>Pavan Magar</title>
-    </head>
-    <body>
-        <!--=============== HEADER PROFILE ===============-->
-        <header class="profile container">
-            <!-- Theme button -->
-            <i class="ri-moon-line change-theme" id="theme-button"></i>
-            <div class="profile__container grid">
+    <!-- Main Content -->
+    <main>
+        <!-- Profile Section -->
+        <section id="about" class="profile container">
+            <div class="profile_container grid">
                 <div class="profile__data">
-                    <div class="profile__border">
-                        <div class="profile__perfil">
-                            <img src="assets/img/my-avatar.png"
-                                alt="Pavan's Profile Photo">
+                    <div class="profile__perfil">
+                        <div class="profile__border">
+                            <img src="profile-picture.jpg" alt="Profile Picture">
                         </div>
                     </div>
-                    <h2 class="profile__name">Pavan Magar</h2>
-                    <h2 class="profile__profession">WebDev | DevOps </h2>
-                    <ul class="profile__social">
-                        <li><a href="https://www.instagram.com/"
-                                target="_blank" class="profile__social-link">
-                                <i class="ri-instagram-line"></i>
-                            </a>
-                        </li>
-                        <li><a
-                                href="https://www.linkedin.com/in/"
-                                target="_blank" class="profile__social-link">
-                                <i class="ri-linkedin-box-line"></i>
-                            </a>
-                        </li>
-                        <li><a href="https://github.com/"
-                                target="_blank" class="profile__social-link">
-                                <i class="ri-github-line"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="profile__info grid">
-                    <div class="profile__info-group">
-                        <h3 class="profile__info-number">2</h3>
-                        <p class="profile__info-description">
-                            Years of <br> experience
-                        </p>
+                    <h2 class="profile__name">Your Name</h2>
+                    <p class="profile__profession">Web Developer</p>
+                    <div class="profile__social">
+                        <a href="#"><i class="fab fa-twitter profile__social-link"></i></a>
+                        <a href="#"><i class="fab fa-instagram profile__social-link"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in profile__social-link"></i></a>
                     </div>
-                    <div class="profile__info-group">
-                        <h3 class="profile__info-number">+15</h3>
-                        <p class="profile__info-description">
-                            Completed <br> projects
-                        </p>
+                    <div class="profile__info grid">
+                        <div class="profile__info-group">
+                            <span class="profile__info-number">10+</span>
+                            <span class="profile__info-description">Projects Completed</span>
+                        </div>
+                        <div class="profile__info-group">
+                            <span class="profile__info-number">5+</span>
+                            <span class="profile__info-description">Happy Clients</span>
+                        </div>
+                        <div class="profile__info-group">
+                            <span class="profile__info-number">3+</span>
+                            <span class="profile__info-description">Years of Experience</span>
+                        </div>
                     </div>
-                    <div class="profile__info-group">
-                        <h3 class="profile__info-number">+25</h3>
-                        <p class="profile__info-description">
-                            Satisfied <br> customers
-                        </p>
-                    </div>
-                </div>
-                <div class="profile__buttons">
-                    <a href="assets/pdf/" class="button"
-                        target="_blank">
-                        Download CV <i class="ri-file-pdf-line"></i>
-                    </a>
-                    <div class="profile__buttons-small">
-                        <a
-                            href="https://api.whatsapp.com/send?phone=&text=Hello!"
-                            target="_blank"
-                            class="button button__small button__gray">
-                            <i class="ri-whatsapp-line"></i>
-                        </a>
-                        <a href="https://t.me/invizher" target="_blank"
-                            class="button button__small button__gray">
-                            <i class="ri-telegram-line"></i>
-                        </a>
+                    <div class="profile__buttons">
+                        <a href="#" class="button">Download CV</a>
+                        <a href="#" class="button">Hire Me</a>
                     </div>
                 </div>
             </div>
-        </header>
-        <!--=============== MAIN ===============-->
-        <main class="main">
-            <section class="filters container">
-                <!--=============== FILTERS TABS ===============-->
-                <ul class="filters__content">
-                    <button class="filters__button filter-tab-active"
-                        data-target="#projects">
-                        Projects
-                    </button>
-                    <button class="filters__button" data-target="#skills">
-                        Skills
-                    </button>
-                </ul>
-                <div class="filters__sections">
-                    <!--=============== PROJECTS ===============-->
-                    <div class="projects__content grid filters__active"
-                        data-content
-                        id="projects">
-                        <article class="projects__card">
-                            <img src="assets/img/project1.png" alt
-                                class="projects__img">
+        </section>
 
-                            <div class="projects__modal">
-                                <div>
-                                    <span class="projects__subtitle">Web</span>
-                                    <h3 class="projects__title">Spittea - Social
-                                        App</h3>
-                                    <a
-                                        href="https://github.com/Mysteriza/spittea"
-                                        class="projects__button button button__small"
-                                        target="_blank">
-                                        <i class="ri-links-line"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="projects__card">
-                            <img src="assets/img/expertsys.png" alt
-                                class="projects__img">
-
-                            <div class="projects__modal">
-                                <div>
-                                    <span class="projects__subtitle">Web</span>
-                                    <h3 class="projects__title">Expert System</h3>
-                                    <a
-                                        href="https://github.com/Mysteriza/Expert-System-Web"
-                                        class="projects__button button button__small"
-                                        target="_blank">
-                                        <i class="ri-links-line"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="projects__card">
-                            <img src="assets/img/wifi.png" alt
-                                class="projects__img">
-
-                            <div class="projects__modal">
-                                <div>
-                                    <span class="projects__subtitle">Program</span>
-                                    <h3 class="projects__title">WiFi Password
-                                        Viewer</h3>
-                                    <a
-                                        href="https://github.com/Mysteriza/WiFi-Password-Viewer"
-                                        class="projects__button button button__small"
-                                        target="_blank">
-                                        <i class="ri-links-line"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="projects__card">
-                            <img src="assets/img/device.png" alt
-                                class="projects__img">
-
-                            <div class="projects__modal">
-                                <div>
-                                    <span class="projects__subtitle">Device</span>
-                                    <h3 class="projects__title">Multitool Device</h3>
-                                    <a
-                                        href="https://github.com/Mysteriza/flipIR-cloner"
-                                        class="projects__button button button__small"
-                                        target="_blank">
-                                        <i class="ri-links-line"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="projects__card">
-                            <img src="assets/img/laundry.png" alt
-                                class="projects__img">
-
-                            <div class="projects__modal">
-                                <div>
-                                    <span class="projects__subtitle">Web</span>
-                                    <h3 class="projects__title">Laundry Web App</h3>
-                                    <a
-                                        href="https://github.com/Mysteriza/rumah-laundry"
-                                        class="projects__button button button__small"
-                                        target="_blank">
-                                        <i class="ri-links-line"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <!--=============== SKILLS ===============-->
-                    <div class="skills__content grid" data-content id="skills">
-                        <div class="skills__area">
-                            <h3 class="skills__title">
-                                Backend Developer
-                            </h3>
-
-                            <div class="skills__box">
-                                <div class="skills__group">
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-                                        <div>
-                                            <h3 class="skills__name">PHP</h3>
-                                            <span class="skills__level">Basic</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-                                        <div>
-                                            <h3 class="skills__name">MySQL</h3>
-                                            <span class="skills__level">Basic</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-                                        <div>
-                                            <h3 class="skills__name">MongoDB</h3>
-                                            <span class="skills__level">Basic</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="skills__group">
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-                                        <div>
-                                            <h3 class="skills__name">Node.js</h3>
-                                            <span class="skills__level">Basic</span>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-                                        <div>
-                                            <h3 class="skills__name">Flask</h3>
-                                            <span class="skills__level">Basic</span>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-                                        <div>
-                                            <h3 class="skills__name">GIT</h3>
-                                            <span class="skills__level">Intermediate</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="skills__area">
-                            <h3 class="skills__title">
-                                Cyber Security
-                            </h3>
-
-                            <div class="skills__box">
-                                <div class="skills__group">
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-                                        <div>
-                                            <h3 class="skills__name">SQL
-                                                Injection</h3>
-                                            <span class="skills__level">Basic</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-                                        <div>
-                                            <h3 class="skills__name">IDOR</h3>
-                                            <span class="skills__level">Basic</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-                                        <div>
-                                            <h3 class="skills__name">Social
-                                                Engineering</h3>
-                                            <span class="skills__level">Basic</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="skills__group">
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-                                        <div>
-                                            <h3 class="skills__name">XSS</h3>
-                                            <span class="skills__level">Basic</span>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-                                        <div>
-                                            <h3 class="skills__name">CSRF</h3>
-                                            <span class="skills__level">Basic</span>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-                                        <div>
-                                            <h3 class="skills__name">Password
-                                                Cracking</h3>
-                                            <span class="skills__level">Basic</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="projects__content container grid">
+                <div class="projects__card">
+                    <img src="project1.jpg" alt="Project 1">
+                    <div class="projects__modal">
+                        <h3 class="projects__title">Project Title</h3>
+                        <p class="projects__subtitle">Project Subtitle</p>
+                        <a href="#" class="button projects__button">View Project</a>
                     </div>
                 </div>
-            </section>
-        </main>
-        <!--=============== FOOTER ===============-->
-        <footer class="footer container">
-            <span class="footer__copy">
-                &#169; PavanMagar. All rights reserved.
-            </span>
-        </footer>
-        <!--=============== SCROLLREVEAL ===============-->
-        <script src="assets/js/scrollreveal.min.js"></script>
-        <!--=============== MAIN JS ===============-->
-        <script src="assets/js/main.js"></script>
-    </body>
+                <!-- More project cards here -->
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="skills__content container">
+                <h3 class="skills__title">Skills</h3>
+                <div class="skills__box">
+                    <div class="skills__group">
+                        <div class="skills__data">
+                            <i class="fab fa-html5"></i>
+                            <span class="skills__name">HTML5</span>
+                        </div>
+                        <div class="skills__level">Intermediate</div>
+                    </div>
+                    <!-- More skills groups here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p class="footer__copy">&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <!-- Script to toggle dark mode -->
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('dark-theme');
+        }
+    </script>
+</body>
 </html>

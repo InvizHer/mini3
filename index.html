@@ -165,13 +165,9 @@
                                 <div>
                                     <span class="projects__subtitle">Telegram</span>
                                     <h3 class="projects__title">Music Bot</h3>
-                                    <a
-                                        href="https://github.com/PavanMagar/CodexunMusicBot"
-                                        class="projects__button button button__small"
-                                        target="_blank">
-                                        Take a Look <i class="ri-eye-line"></i>
-                                    </a>
-                                </div>
+                                    <p class="project__description">Project description goes here.</p>
+                                    <a href="#" class="projects__button button button__small view-details">Take a Look <i class="ri-eye-line"></i></a>
+                               </div>
                             </div>
                         </article>
 
@@ -412,36 +408,53 @@
         <script src="assets/js/main.js"></script>
        <!--=============== MAIN JS ===============-->
     <script>
-        // Popup Modal Script
-        document.addEventListener('DOMContentLoaded', function () {
-            const projectButtons = document.querySelectorAll('.view-details');
-            const popupModal = document.querySelector('.popup-modal');
-            const popupContent = document.querySelector('.popup-content');
-            const closeBtn = document.querySelector('.close-btn');
+        // Get all view-details buttons
+        const viewButtons = document.querySelectorAll('.view-details');
 
-            projectButtons.forEach(button => {
-                button.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const projectTitle = this.parentNode.querySelector('.projects__title').innerText;
-                    const projectDescription = this.parentNode.querySelector('.project__description').innerText;
-                    const projectImage = this.parentNode.querySelector('.projects__img').getAttribute('src');
+        // Get the popup modal and its content
+        const popupModal = document.createElement('div');
+        popupModal.classList.add('popup-modal');
 
-                    popupContent.querySelector('.popup-title').innerText = projectTitle;
-                    popupContent.querySelector('.popup-description').innerText = projectDescription;
-                    popupContent.querySelector('.popup-img').setAttribute('src', projectImage);
+        // Function to create the popup modal content
+        function createPopupContent(title, description) {
+            const popupContent = document.createElement('div');
+            popupContent.classList.add('popup-content');
 
-                    popupModal.style.display = 'flex';
-                });
-            });
+            popupContent.innerHTML = `
+                <span class="close-btn">&times;</span>
+                <h2>${title}</h2>
+                <p>${description}</p>
+                <a href="#" class="button button__small">Know More</a>
+            `;
 
-            closeBtn.addEventListener('click', function () {
-                popupModal.style.display = 'none';
-            });
+            return popupContent;
+        }
 
-            window.addEventListener('click', function (e) {
-                if (e.target === popupModal) {
-                    popupModal.style.display = 'none';
-                }
+        // Function to open the popup modal
+        function openPopup(title, description) {
+            const popupContent = createPopupContent(title, description);
+            popupModal.innerHTML = '';
+            popupModal.appendChild(popupContent);
+            document.body.appendChild(popupModal);
+            popupModal.style.display = 'flex';
+
+            // Add event listener to close button
+            const closeButton = popupModal.querySelector('.close-btn');
+            closeButton.addEventListener('click', closePopup);
+        }
+
+        // Function to close the popup modal
+        function closePopup() {
+            popupModal.style.display = 'none';
+        }
+
+        // Attach event listener to each view-details button
+        viewButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const title = this.parentElement.querySelector('.projects__title').textContent;
+                const description = this.parentElement.querySelector('.project__description').textContent;
+                openPopup(title, description);
             });
         });
     </script>

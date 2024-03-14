@@ -541,6 +541,12 @@ body.dark-theme{
             height: auto;
             border-radius: 8px;
         }
+/* Media query for hiding image on desktop-sized devices */
+@media only screen and (min-width: 768px) {
+    .popup-image {
+        display: none;
+    }
+}
 
 /*=============== FOOTER ===============*/
 .footer__copy{

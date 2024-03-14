@@ -13,6 +13,49 @@
             rel="stylesheet">
         <!--=============== CSS ===============-->
         <link rel="stylesheet" href="assets/css/styles.css">
+        <style>
+        /* Popup Modal Styles */
+        .popup-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            text-align: center;
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        /* Keyframe Animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
         <title>About | Pavan Magar</title>
     </head>
     <body>
@@ -96,13 +139,9 @@
                                 <div>
                                     <span class="projects__subtitle">Web</span>
                                     <h3 class="projects__title">Terabox Downloader</h3>
-                                    <a
-                                        href="https://t.mt/boxgramrobot"
-                                        class="projects__button button button__small"
-                                        target="_blank">
-                                        Take a Look <i class="ri-eye-line"></i>
-                                    </a>
-                                </div>
+                                    <p class="project__description">Project description goes here.</p>
+                                    <a href="#" class="projects__button button button__small view-details">Take a Look <i class="ri-eye-line"></i></a>
+                            </div>
                             </div>
                         </article>
 
@@ -359,5 +398,57 @@
         <script src="assets/js/scrollreveal.min.js"></script>
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
+        <!--=============== MAIN JS ===============-->
+    <script>
+        // Get all view-details buttons
+        const viewButtons = document.querySelectorAll('.view-details');
+
+        // Get the popup modal and its content
+        const popupModal = document.createElement('div');
+        popupModal.classList.add('popup-modal');
+
+        // Function to create the popup modal content
+        function createPopupContent(title, description) {
+            const popupContent = document.createElement('div');
+            popupContent.classList.add('popup-content');
+
+            popupContent.innerHTML = `
+                <span class="close-btn">&times;</span>
+                <h2>${title}</h2>
+                <p>${description}</p>
+                <a href="#" class="button button__small">Know More</a>
+            `;
+
+            return popupContent;
+        }
+
+        // Function to open the popup modal
+        function openPopup(title, description) {
+            const popupContent = createPopupContent(title, description);
+            popupModal.innerHTML = '';
+            popupModal.appendChild(popupContent);
+            document.body.appendChild(popupModal);
+            popupModal.style.display = 'flex';
+
+            // Add event listener to close button
+            const closeButton = popupModal.querySelector('.close-btn');
+            closeButton.addEventListener('click', closePopup);
+        }
+
+        // Function to close the popup modal
+        function closePopup() {
+            popupModal.style.display = 'none';
+        }
+
+        // Attach event listener to each view-details button
+        viewButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const title = this.parentElement.querySelector('.projects__title').textContent;
+                const description = this.parentElement.querySelector('.project__description').textContent;
+                openPopup(title, description);
+            });
+        });
+    </script>
     </body>
 </html>

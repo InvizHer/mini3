@@ -55,6 +55,11 @@
                 transform: translateY(0);
             }
         }
+
+        /* Hide project description initially */
+        .projects__card .project__description {
+            display: none;
+        }
     </style>
         <title>About | Pavan Magar</title>
     </head>
@@ -137,10 +142,10 @@
 
                             <div class="projects__modal">
                                 <div>
-                                    <span class="projects__subtitle">Web</span>
-                                    <h3 class="projects__title">Terabox Downloader</h3>
-                                    <p class="project__description">Project description goes here.</p>
-                                    <a href="#" class="projects__button button button__small view-details">Take a Look <i class="ri-eye-line"></i></a>
+                                <span class="projects__subtitle">Web</span>
+                                <h3 class="projects__title">Terabox Downloader</h3>
+                                <p class="project__description">Project description goes here.</p>
+                                <a href="#" class="projects__button button button__small view-details">Take a Look <i class="ri-eye-line"></i></a>
                             </div>
                             </div>
                         </article>
@@ -398,7 +403,7 @@
         <script src="assets/js/scrollreveal.min.js"></script>
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
-        <!--=============== MAIN JS ===============-->
+       <!--=============== MAIN JS ===============-->
     <script>
         // Get all view-details buttons
         const viewButtons = document.querySelectorAll('.view-details');

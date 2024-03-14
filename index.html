@@ -457,19 +457,33 @@
         });
 
 
-          // Function to reveal content with Scroll Reveal animation
-function revealContent(target) {
-    const content = document.querySelector(target);
-    sr.reveal(content);
+          // Initialize Scroll Reveal
+const sr = ScrollReveal({
+    origin: "top",
+    distance: "60px",
+    duration: 2500,
+    delay: 400,
+});
+
+// Function to reveal content for the active tab and hide content for other tabs
+function revealContent(activeTab) {
+    const tabs = document.querySelectorAll('.filters__content [data-content]');
+    tabs.forEach(tab => {
+        if (tab.getAttribute('id') === activeTab) {
+            tab.classList.add('filters__active');
+            sr.reveal(tab, { delay: 200 });
+        } else {
+            tab.classList.remove('filters__active');
+        }
+    });
 }
 
-// Attach event listener to each filters button
-const filtersButtons = document.querySelectorAll('.filters__button');
-filtersButtons.forEach(button => {
-    button.addEventListener('click', function(event) {
-        event.preventDefault();
-        const target = this.getAttribute('data-target');
-        revealContent(target);
+// Event listener for tab buttons
+const tabButtons = document.querySelectorAll('.filters__button');
+tabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const activeTab = this.getAttribute('data-target').slice(1);
+        revealContent(activeTab);
     });
 });
 

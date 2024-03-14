@@ -29,13 +29,13 @@
 .popup-content {
     background-color: #fff;
     color: #000;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
     max-width: 80%;
-    text-align: left; /* Align description from left to right */
+    text-align: center;
+    animation: slideIn 0.5s ease forwards;
     position: relative;
 }
-
 .popup-content h3 {
     font-size: 1.5rem; /* Adjust title font size */
     margin-bottom: 10px;
@@ -45,19 +45,6 @@
     font-size: 1rem; /* Adjust description font size */
 }
 
-.popup-content .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.popup-content .know-more {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-}
 
 /* Dark mode styles */
 .dark-mode .popup-content {
@@ -172,7 +159,7 @@
                                 <span class="projects__subtitle">Web</span>
                                 <h3 class="projects__title">Terabox Downloader</h3>
                                 <p class="project__description">Got introduced to programming in my freshman year at The Swami Ramanand Teerth Marathwada University, Nanded MH. Where I completed my Bachelors of Computer Applications in year 2020-2022 with 86.3% aggregate.</p>
-                                <a href="https://remixicon.com/icon/mail-send-fill" class="projects__button button button__small view-details know-more">Take a Look <i class="ri-eye-line"></i></a>
+                                <a href="https://remixicon.com/icon/mail-send-fill" class="projects__button button button__small view-details">Take a Look <i class="ri-eye-line"></i></a>
                             </div>
                         </div>
                     </article>
@@ -185,7 +172,7 @@
                                 <span class="projects__subtitle">Telegram</span>
                                 <h3 class="projects__title">Music Bot</h3>
                                 <p class="project__description">Project goes here.</p>
-                                <a href="https://remixicon.com/" class="projects__button button button__small view-details know-more">Take a Look <i class="ri-eye-line"></i></a>
+                                <a href="https://remixicon.com/" class="projects__button button button__small view-details">Take a Look <i class="ri-eye-line"></i></a>
                             </div>
                         </div>
                     </article>
@@ -421,7 +408,7 @@
                 <span class="close-btn">&times;</span>
                 <h2>${title}</h2>
                 <p>${description}</p>
-                <a href="${link}" class="projects__button button button__small know-more">Know More</a>
+                <a href="${link}" class="projects__button button button__small">Know More</a>
             `;
 
             return popupContent;

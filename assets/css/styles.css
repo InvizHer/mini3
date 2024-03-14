@@ -462,117 +462,88 @@ body.dark-theme{
 
         
 /* Popup Modal Styles */
+        .popup-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* For dark mode background */
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
 
-.popup-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* For dark mode background */
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
+        /* CSS styles for the popup modal */
+        .popup-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 80%;
+            text-align: left;
+            animation: slideIn 0.5s ease forwards;
+            position: relative;
+        }
+        .popup-content h3 {
+            font-size: 1.1rem; /* Adjust title font size */
+            margin-bottom: 10px;
+        }
 
-.popup-content {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    max-width: 80%;
-    text-align: left;
-    animation: slideIn 0.5s ease forwards;
-    position: relative;
-}
+        /* Dark mode styles */
+        .dark-theme .popup-content {
+            background-color: #333; /* For dark mode background */
+        }
 
-.popup-content h3 {
-    font-size: 1.1rem; /* Adjust title font size */
-    margin-bottom: 10px;
-}
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
 
-.dark-theme .popup-content {
-    background-color: #333; /* For dark mode background */
-}
+        /* Keyframe Animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 20px;
-}
+        /* Hide project description initially */
+        .projects__card .project__description {
+            display: none;
+        }
 
-.popup-image {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
+        /* Increase gap between description and Know More button */
+        .popup-content p {
+            font-size: 0.88rem;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
 
-/* Hide project description initially */
-.projects__card .project__description {
-    display: none;
-}
+        /* Adjust button styles */
+        .popup-content .projects__button {
+            margin-top: 20px;
+            display: inline-block;
+            margin-right: 10px;
+        }
 
-/* Increase gap between description and Know More button */
-.popup-content p {
-    font-size: 0.88rem;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+        .popup-content .projects__button:last-child {
+            margin-right: 0;
+        }
 
-/* Adjust button styles */
-.popup-content .projects__button {
-    margin-top: 20px;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.popup-content .projects__button:last-child {
-    margin-right: 0;
-}
-
-/* Keyframe Animation */
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive styles for popup modal */
-@media screen and (max-width: 768px) {
-    .popup-content {
-        padding: 20px;
-        max-width: 90%;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .popup-content {
-        padding: 15px;
-        max-width: 95%;
-    }
-
-    .popup-content h3 {
-        font-size: 1rem; /* Adjust title font size */
-    }
-}
-
-/* Responsive styles for popup buttons */
-.popup-content .projects__button {
-    margin-top: 15px;
-    margin-right: 5px;
-}
-
-.popup-content .projects__button:last-child {
-    margin-right: 0;
-}
+        .popup-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
 /*=============== FOOTER ===============*/
 .footer__copy{
   display: block;

@@ -151,8 +151,8 @@
                                 <div>
                                 <span class="projects__subtitle">Web</span>
                                 <h3 class="projects__title">Terabox Downloader</h3>
-                                <p class="project__description">Project description goes here.</p>
-                                <a href="#" class="projects__button button button__small view-details">Take a Look <i class="ri-eye-line"></i></a>
+                                <p class="project__description">Got introduced to programming in my freshman year at The Swami Ramanand Teerth Marathwada University, Nanded MH. Where I completed my Bachelors of Computer Applications in year 2020-2022 with 86.3% aggregate.</p>
+                                <a href="https://remixicon.com/icon/mail-send-fill" class="projects__button button button__small view-details">Take a Look <i class="ri-eye-line"></i></a>
                             </div>
                             </div>
                         </article>
@@ -165,8 +165,8 @@
                                 <div>
                                     <span class="projects__subtitle">Telegram</span>
                                     <h3 class="projects__title">Music Bot</h3>
-                                    <p class="project__description">Project description goes here.</p>
-                                    <a href="#" class="projects__button button button__small view-details">Take a Look <i class="ri-eye-line"></i></a>
+                                    <p class="project__description">Project goes here.</p>
+                                    <a href="https://remixicon.com/" class="projects__button button button__small view-details">Take a Look <i class="ri-eye-line"></i></a>
                                </div>
                             </div>
                         </article>
@@ -456,6 +456,12 @@
                 const description = this.parentElement.querySelector('.project__description').textContent;
                 openPopup(title, description);
             });
+
+            // Close modal when clicking outside the content area
+        window.addEventListener('click', (e) => {
+            if (e.target === popupModal) {
+                popupModal.style.display = 'none';
+            }
         });
     </script>
     </body>

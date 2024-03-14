@@ -131,4 +131,4 @@ sr.reveal(".profile__social", { delay: 700 });
 sr.reveal(".profile__info-group", { interval: 100, delay: 700 });
 sr.reveal(".profile__buttons", { delay: 800 });
 sr.reveal(".filters__content", { delay: 900 });
-sr.reveal(".projects__content", { delay: 1000 });
+sr.reveal(".projects", { delay: 1000 });

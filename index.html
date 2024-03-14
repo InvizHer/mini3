@@ -142,7 +142,7 @@
                                 <span class="projects__subtitle">Web</span>
                                 <h3 class="projects__title">Terabox Downloader</h3>
                                 <p class="project__description">Got introduced to programming in my freshman year at The Swami Ramanand Teerth Marathwada University, Nanded MH. Where I completed my Bachelors of Computer Applications in year 2020-2022 with 86.3% aggregate.</p>
-                                <p class="projects__button button button__small view-details">Take a Look <i class="ri-eye-line"></i></p>
+                                <a href="https://remixicon.com/icon/mail-send-fill" class="projects__button button button__small view-details">Take a Look <i class="ri-eye-line"></i></a>
                             </div>
                         </div>
                     </article>
@@ -155,7 +155,7 @@
                                 <span class="projects__subtitle">Telegram</span>
                                 <h3 class="projects__title">Music Bot</h3>
                                 <p class="project__description">Project goes here.</p>
-                                <p class="projects__button button button__small view-details">Take a Look <i class="ri-eye-line"></i></p>
+                                <a href="https://remixicon.com/" class="projects__button button button__small view-details">Take a Look <i class="ri-eye-line"></i></a>
                             </div>
                         </div>
                     </article>
@@ -421,7 +421,7 @@
                 event.preventDefault();
                 const title = this.parentElement.querySelector('.projects__title').textContent;
                 const description = this.parentElement.querySelector('.project__description').textContent;
-                const link = this.parentElement.querySelector('.projects__button').getAttribute('href');
+                const link = this.parentElement.parentElement.dataset.link;
                 openPopup(title, description, link);
             });
         });

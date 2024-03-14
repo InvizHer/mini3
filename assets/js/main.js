@@ -57,6 +57,65 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
 
+// Get all view-details buttons
+        const viewButtons = document.querySelectorAll('.view-details');
+
+        // Get the popup modal and its content
+        const popupModal = document.createElement('div');
+        popupModal.classList.add('popup-modal');
+
+        // Function to create the popup modal content
+        function createPopupContent(title, description, link, preview) {
+            const popupContent = document.createElement('div');
+            popupContent.classList.add('popup-content');
+
+            popupContent.innerHTML = `
+                <span class="close-btn">&times;</span>
+                <h3>${title}</h3>
+                <p>${description}</p>
+                <a href="${preview}" class="projects__button button button__small" target="_blank">Preview <i class="ri-eye-line"></i></a>
+                <a href="${link}" class="projects__button button button__small" target="_blank">Ask for code <i class="ri-arrow-right-circle-line"></i></a>
+            `;
+
+            return popupContent;
+        }
+
+        // Function to open the popup modal
+        function openPopup(title, description, link, preview) {
+            const popupContent = createPopupContent(title, description, link, preview);
+            popupModal.innerHTML = '';
+            popupModal.appendChild(popupContent);
+            document.body.appendChild(popupModal);
+            popupModal.style.display = 'flex';
+
+            // Add event listener to close button
+            const closeButton = popupModal.querySelector('.close-btn');
+            closeButton.addEventListener('click', closePopup);
+        }
+
+        // Function to close the popup modal
+        function closePopup() {
+            popupModal.style.display = 'none';
+        }
+
+        // Attach event listener to each view-details button
+        viewButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const title = this.parentElement.querySelector('.projects__title').textContent;
+                const description = this.parentElement.querySelector('.project__description').textContent;
+                const link = this.closest('.projects__card').dataset.link;
+                const preview = this.closest('.projects__card').dataset.preview;
+                openPopup(title, description, link, preview);
+            });
+        });
+
+        // Close modal when clicking outside the content area
+        window.addEventListener('click', (e) => {
+            if (e.target === popupModal) {
+                popupModal.style.display = 'none';
+            }
+        });
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({
   origin: "top",

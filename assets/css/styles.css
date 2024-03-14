@@ -460,7 +460,7 @@ body.dark-theme{
   background-color: var(--body-color);
 }
 
- /* Popup Modal Styles */
+        /* Popup Modal Styles */
         .popup-modal {
             position: fixed;
             top: 0;
@@ -537,6 +537,12 @@ body.dark-theme{
             margin-right: 0;
         }
 
+        .popup-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
 /*=============== FOOTER ===============*/
 .footer__copy{
   display: block;

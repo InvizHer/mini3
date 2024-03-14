@@ -455,6 +455,24 @@
                 popupModal.style.display = 'none';
             }
         });
+
+
+          // Function to reveal content with Scroll Reveal animation
+function revealContent(target) {
+    const content = document.querySelector(target);
+    sr.reveal(content);
+}
+
+// Attach event listener to each filters button
+const filtersButtons = document.querySelectorAll('.filters__button');
+filtersButtons.forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.preventDefault();
+        const target = this.getAttribute('data-target');
+        revealContent(target);
+    });
+});
+
     </script>
 </body>
 </html>

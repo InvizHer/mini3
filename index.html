@@ -412,53 +412,36 @@
         <script src="assets/js/main.js"></script>
        <!--=============== MAIN JS ===============-->
     <script>
-        // Get all view-details buttons
-        const viewButtons = document.querySelectorAll('.view-details');
+        // Popup Modal Script
+        document.addEventListener('DOMContentLoaded', function () {
+            const projectButtons = document.querySelectorAll('.view-details');
+            const popupModal = document.querySelector('.popup-modal');
+            const popupContent = document.querySelector('.popup-content');
+            const closeBtn = document.querySelector('.close-btn');
 
-        // Get the popup modal and its content
-        const popupModal = document.createElement('div');
-        popupModal.classList.add('popup-modal');
+            projectButtons.forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const projectTitle = this.parentNode.querySelector('.projects__title').innerText;
+                    const projectDescription = this.parentNode.querySelector('.project__description').innerText;
+                    const projectImage = this.parentNode.querySelector('.projects__img').getAttribute('src');
 
-        // Function to create the popup modal content
-        function createPopupContent(title, description) {
-            const popupContent = document.createElement('div');
-            popupContent.classList.add('popup-content');
+                    popupContent.querySelector('.popup-title').innerText = projectTitle;
+                    popupContent.querySelector('.popup-description').innerText = projectDescription;
+                    popupContent.querySelector('.popup-img').setAttribute('src', projectImage);
 
-            popupContent.innerHTML = `
-                <span class="close-btn">&times;</span>
-                <h2>${title}</h2>
-                <p>${description}</p>
-                <a href="#" class="button button__small">Know More</a>
-            `;
+                    popupModal.style.display = 'flex';
+                });
+            });
 
-            return popupContent;
-        }
+            closeBtn.addEventListener('click', function () {
+                popupModal.style.display = 'none';
+            });
 
-        // Function to open the popup modal
-        function openPopup(title, description) {
-            const popupContent = createPopupContent(title, description);
-            popupModal.innerHTML = '';
-            popupModal.appendChild(popupContent);
-            document.body.appendChild(popupModal);
-            popupModal.style.display = 'flex';
-
-            // Add event listener to close button
-            const closeButton = popupModal.querySelector('.close-btn');
-            closeButton.addEventListener('click', closePopup);
-        }
-
-        // Function to close the popup modal
-        function closePopup() {
-            popupModal.style.display = 'none';
-        }
-
-        // Attach event listener to each view-details button
-        viewButtons.forEach(button => {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-                const title = this.parentElement.querySelector('.projects__title').textContent;
-                const description = this.parentElement.querySelector('.project__description').textContent;
-                openPopup(title, description);
+            window.addEventListener('click', function (e) {
+                if (e.target === popupModal) {
+                    popupModal.style.display = 'none';
+                }
             });
         });
     </script>

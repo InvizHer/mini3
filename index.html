@@ -470,10 +470,10 @@ function revealContent(activeTab) {
     const tabs = document.querySelectorAll('.filters__content [data-content]');
     tabs.forEach(tab => {
         if (tab.getAttribute('id') === activeTab) {
-            tab.classList.add('filters__active');
+            tab.style.display = 'block';
             sr.reveal(tab, { delay: 200 });
         } else {
-            tab.classList.remove('filters__active');
+            tab.style.display = 'none';
         }
     });
 }
@@ -486,6 +486,7 @@ tabButtons.forEach(button => {
         revealContent(activeTab);
     });
 });
+
 
     </script>
 </body>

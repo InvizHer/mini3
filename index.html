@@ -28,8 +28,8 @@
 /* CSS styles for the popup modal */
 .popup-content {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 15px;
     max-width: 80%;
     text-align: left;
     animation: slideIn 0.5s ease forwards;
@@ -39,11 +39,6 @@
     font-size: 1.1rem; /* Adjust title font size */
     margin-bottom: 10px;
 }
-
-.popup-content p {
-    font-size: 1rem; /* Adjust description font size */
-}
-
 
 /* Dark mode styles */
 .dark-mode .popup-content {
@@ -78,6 +73,8 @@
 
         /* Increase gap between description and Know More button */
         .popup-content p {
+            font-size: 0.88rem;
+            margin-top: 20px;
             margin-bottom: 20px;
         }
     </style>
@@ -405,7 +402,7 @@
 
             popupContent.innerHTML = `
                 <span class="close-btn">&times;</span>
-                <h2>${title}</h2>
+                <h3>${title}</h3>
                 <p>${description}</p>
                 <a href="${link}" class="projects__button button button__small">Know More</a>
             `;

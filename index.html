@@ -311,11 +311,28 @@
             </ul>
             &#169; 2024 - Pavan Magar. All rights reserved.
         </span>
+        <!-- Display unique visit count here -->
+        <span id="visitCount">Loading...</span>
     </footer>
     <!--=============== SCROLLREVEAL ===============-->
     <script src="assets/js/scrollreveal.min.js"></script>
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
     <!--=============== MAIN JS ===============-->
+    <script>
+        // Fetch unique visit count from Cloudflare API
+        fetch('https://api.cloudflare.com/client/v4/zones/b85e7ee35673e8222c942fca42904aed/analytics/dashboard?since=-10080&until=now&continuous=false&category=unique_visitors&limit=1', {
+            headers: {
+                'Authorization': 'Bearer qXuAu5ZUiyfPtKAp_UGQvQ5vAXXCTSzJ8BSEq1iN',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Update visit count on the webpage
+            document.getElementById('visitCount').textContent = data.result.totals[0].value;
+        })
+        .catch(error => console.error('Error fetching visit count:', error));
+    </script>
 </body>
 </html>

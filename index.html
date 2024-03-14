@@ -374,7 +374,7 @@
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
     <!--=============== MAIN JS ===============-->
-    <script>
+      <script>
         // Get all view-details buttons
         const viewButtons = document.querySelectorAll('.view-details');
 
@@ -421,7 +421,7 @@
                 event.preventDefault();
                 const title = this.parentElement.querySelector('.projects__title').textContent;
                 const description = this.parentElement.querySelector('.project__description').textContent;
-                const link = this.parentElement.parentElement.dataset.link;
+                const link = this.closest('.projects__card').dataset.link;
                 openPopup(title, description, link);
             });
         });

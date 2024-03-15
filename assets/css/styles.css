@@ -129,7 +129,12 @@ body.dark-theme{
   background-color: hsl(var(--hue), 8%, 35%);
 }
 
-
+.dark-theme .projects__modal{
+    border: 10px solid var(--container-color);
+  }
+ .dark-theme .projects__card img{
+    border: 10px solid var(--container-color);
+  }
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 968px;
@@ -492,7 +497,7 @@ body.dark-theme{
 
         /* Dark mode styles */
         .dark-theme .popup-content {
-            background-color: #333; /* For dark mode background */
+            background-color: var(--container-color); /* For dark mode background */
         }
 
         .close-btn {

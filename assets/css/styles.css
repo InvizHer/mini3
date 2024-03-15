@@ -452,6 +452,7 @@ body.dark-theme{
 }
 
 .filters__active[data-content]{
+  animation: slideIn 1.2s ease forwards;
   display: grid;
 }
 

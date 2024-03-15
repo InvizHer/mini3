@@ -481,7 +481,7 @@ body.dark-theme{
             border-radius: 15px;
             max-width: 80%;
             text-align: left;
-            animation: slideIn 0.8s ease forwards;
+            animation: slideIn 1.2s ease forwards;
             position: relative;
         }
         .popup-content h3 {

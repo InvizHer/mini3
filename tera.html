@@ -10,10 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <!--=============== CSS ===============-->
     <style>
-        /* Add your CSS styles here */
-
-        
-
         /* Main */
         .main {
             padding: 20px;
@@ -55,7 +51,17 @@
             background-color: #0056b3;
         }
 
-        
+        .go-back {
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.25rem;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: .3s;
+}
     </style>
     <title>Pavan Magar - Latest Article Title</title>
 </head>
@@ -63,37 +69,10 @@
     <!--=============== HEADER PROFILE ===============-->
     <header class="profile container">
         <!-- Theme button -->
+        <div class="profile__info grid">
+        <i class="ri-arrow-left-circle-line  go-back"></i>
+            <h2>Pavan Magar</h2>
         <i class="ri-moon-line change-theme" id="theme-button"></i>
-        <div class="profile__container grid">
-            <div class="profile__data">
-                <div class="profile__border">
-                    <div class="profile__perfil">
-                        <img src="assets/img/my-avatar.png" alt="Pavan's Profile Photo">
-                    </div>
-                </div>
-                <h2 class="profile__name">Pavan Magar</h2>
-                <h2 class="profile__profession">WebDev | DevOps </h2>
-            </div>
-            <div class="profile__info grid">
-                <div class="profile__info-group">
-                    <h3 class="profile__info-number">02+</h3>
-                    <p class="profile__info-description">
-                        Years of <br> experience
-                    </p>
-                </div>
-                <div class="profile__info-group">
-                    <h3 class="profile__info-number">15+</h3>
-                    <p class="profile__info-description">
-                        Completed <br> projects
-                    </p>
-                </div>
-                <div class="profile__info-group">
-                    <h3 class="profile__info-number">25+</h3>
-                    <p class="profile__info-description">
-                        Satisfied <br> customers
-                    </p>
-                </div>
-            </div>
         </div>
     </header>
 

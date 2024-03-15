@@ -561,6 +561,32 @@ body.dark-theme{
     }
 }
 
+
+/* Github Buttons and Message*/
+
+.projects__github-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333; /* Adjust color as needed */
+}
+.button__github {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333; /* Adjust color as needed */
+    border-radius: 5px;
+}
+
+.button__github:hover {
+    background-color: #555; /* Adjust hover color as needed */
+}
+
 /*=============== FOOTER ===============*/
 .footer__copy{
   display: block;

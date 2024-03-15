@@ -96,8 +96,10 @@ themeButton.addEventListener("click", () => {
             closeButton.addEventListener('click', closePopup);
         }
 
-        // Function to close the popup modal
+        // Function to close the popup modal and stop the video
         function closePopup() {
+            const iframe = popupModal.querySelector('iframe');
+            iframe.src = iframe.src; // Stop the video by resetting the source
             popupModal.style.display = 'none';
         }
 
@@ -117,7 +119,9 @@ themeButton.addEventListener("click", () => {
         // Close modal when clicking outside the content area
         window.addEventListener('click', (e) => {
             if (e.target === popupModal) {
-                popupModal.style.display = 'none';
+              const iframe = popupModal.querySelector('iframe');
+              iframe.src = iframe.src; // Stop the video by resetting the source
+              popupModal.style.display = 'none';
             }
         });
 /*=============== SCROLL REVEAL ANIMATION ===============*/

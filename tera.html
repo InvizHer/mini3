@@ -13,6 +13,8 @@
         /* Main */
         .main {
             padding: 20px;
+            opacity: 0; /* Set opacity to 0 initially */
+            transition: opacity 0.5s ease; /* Smooth transition for opacity */
         }
 
         .article__container {
@@ -20,48 +22,69 @@
             margin: 0 auto; /* Center the article container horizontally */
             padding: 20px;
             box-sizing: border-box; /* Include padding in the width calculation */
+            opacity: 0; /* Set opacity to 0 initially */
+            transition: opacity 0.5s ease; /* Smooth transition for opacity */
         }
 
         .article__heading {
-            font-size: 24px;
+            font-size: 18px; /* Increased font size */
             margin-bottom: 10px;
+            text-align: center; /* Center align the heading */
+            color: #333; /* Gray color */
+            transition: opacity 0.5s ease; /* Smooth transition for opacity */
         }
 
         .article__image {
             width: 100%;
             height: auto;
             margin-bottom: 20px;
+            opacity: 0; /* Set opacity to 0 initially */
+            transition: opacity 0.5s ease; /* Smooth transition for opacity */
         }
 
         .article__text {
             margin-bottom: 10px;
-        }
-
-        .article__button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .article__button:hover {
-            background-color: #0056b3;
+            color: #555; /* Dark gray color for text */
+            opacity: 0; /* Set opacity to 0 initially */
+            transition: opacity 0.5s ease; /* Smooth transition for opacity */
         }
 
         .go-back {
-    position: absolute;
-    top: 1.5rem;
-    left: 0;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.5rem;
-    color: var(--title-color);
-    cursor: pointer;
-    transition: .3s;
-}
+            position: absolute;
+            top: 1.5rem;
+            left: 0;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.5rem;
+            color: var(--title-color);
+            cursor: pointer;
+            transition: opacity 0.5s ease; /* Smooth transition for opacity */
+        }
+
+        /* Show elements when main is visible */
+        .main.show {
+            opacity: 1;
+        }
+
+        .article__container.show {
+            opacity: 1;
+        }
+
+        .article__heading.show {
+            opacity: 1;
+        }
+
+        .article__image.show {
+            opacity: 1;
+        }
+
+        .article__text.show {
+            opacity: 1;
+        }
+
+        .go-back.show {
+            opacity: 1;
+        }
     </style>
     <title>Pavan Magar - Latest Article Title</title>
 </head>
@@ -69,9 +92,10 @@
     <!--=============== HEADER PROFILE ===============-->
     <header class="profile container">
         <!-- Theme button -->
-        <i class="ri-arrow-left-circle-line  go-back"></i>
+        <a href="https://creatorpavan.eu.org">
+            <i class="ri-arrow-left-circle-line go-back"></i>
+        </a>
         <i class="ri-moon-line change-theme" id="theme-button"></i>
-
     </header>
 
     <!--=============== MAIN ===============-->
@@ -83,7 +107,6 @@
             <div class="article__content">
                 <p class="article__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum, diam sed tempor viverra, nulla sapien feugiat metus, vel fermentum odio magna sit amet ex. Cras id neque at odio iaculis tempor. Vivamus non nisl risus. Integer tincidunt ligula quis ipsum porta, nec auctor velit fermentum. Nullam eu fermentum mauris.</p>
                 <p class="article__text">Nullam imperdiet arcu in sapien tincidunt, vitae eleifend odio faucibus. Phasellus at feugiat purus, vel aliquam arcu. Sed ut turpis eleifend, ullamcorper leo sed, pharetra nisl. Vivamus non augue eget lorem suscipit venenatis. Ut convallis metus vel nunc dictum gravida. Proin tincidunt ex vitae libero fermentum, ut dapibus elit gravida.</p>
-                <a href="#" class="article__button button">Read More</a>
             </div>
         </div>
     </main>
@@ -103,5 +126,19 @@
     <script src="assets/js/scrollreveal.min.js"></script>
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
+
+    <script>
+        // Add 'show' class to elements to trigger animation
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector('.main').classList.add('show');
+            document.querySelector('.article__container').classList.add('show');
+            document.querySelector('.article__heading').classList.add('show');
+            document.querySelector('.article__image').classList.add('show');
+            document.querySelectorAll('.article__text').forEach(function(element) {
+                element.classList.add('show');
+            });
+            document.querySelector('.go-back').classList.add('show');
+        });
+    </script>
 </body>
 </html>

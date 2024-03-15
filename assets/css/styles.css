@@ -561,14 +561,6 @@ body.dark-theme{
     }
 }
 
-
-/* Github Buttons and Message*/
-
-.projects__github-message {
-    text-align: center;
-    margin-top: 12px;
-    font-size: 18px;
-}
 /*=============== FOOTER ===============*/
 .footer__copy{
   display: block;

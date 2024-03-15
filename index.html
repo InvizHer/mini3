@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
-    <title>Pavan Magar - Latest Article Title</title>
+    <title>Pavan Magar</title>
 </head>
 <body>
     <!--=============== HEADER PROFILE ===============-->
@@ -53,6 +53,7 @@
                     Download CV <i class="ri-article-line"></i>
                 </a>
                 <div class="profile__buttons-small">
+
                     <a href="mailto:pavanmgr429@gmail.com" target="_blank" class="button button__small button__gray">
                         Mail me <i class="ri-mail-send-fill"></i>
                     </a>
@@ -60,21 +61,247 @@
             </div>
         </div>
     </header>
-
     <!--=============== MAIN ===============-->
     <main class="main">
-        <!--=============== ARTICLE ===============-->
-        <div class="article container">
-            <h1 class="article__heading">Latest Article Title</h1>
-            <div class="article__content">
-                <img src="assets/img/article-image.jpg" alt="Article Image" class="article__image">
-                <p class="article__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum, diam sed tempor viverra, nulla sapien feugiat metus, vel fermentum odio magna sit amet ex. Cras id neque at odio iaculis tempor. Vivamus non nisl risus. Integer tincidunt ligula quis ipsum porta, nec auctor velit fermentum. Nullam eu fermentum mauris.</p>
-                <p class="article__text">Nullam imperdiet arcu in sapien tincidunt, vitae eleifend odio faucibus. Phasellus at feugiat purus, vel aliquam arcu. Sed ut turpis eleifend, ullamcorper leo sed, pharetra nisl. Vivamus non augue eget lorem suscipit venenatis. Ut convallis metus vel nunc dictum gravida. Proin tincidunt ex vitae libero fermentum, ut dapibus elit gravida.</p>
-                <a href="#" class="article__button button">Read More</a>
-            </div>
-        </div>
-    </main>
+        <section class="filters container">
+            <!--=============== FILTERS TABS ===============-->
+            <ul class="filters__content">
+                <button class="filters__button filter-tab-active" data-target="#projects">
+                    Projects
+                </button>
+                <button class="filters__button" data-target="#skills">
+                    Skills
+                </button>
+                <button class="filters__button" data-target="#about">
+                    About
+                </button>
+            </ul>
+            <div class="filters__sections">
+                
+                <!--=============== PROJECTS ===============-->
+                
+                <div class="projects__content grid filters__active" data-content id="projects">
+                    <article class="projects__card" data-link="https://invizher.github.io/mini3/tera.html" data-preview="https://t.me/boxgramrobot" data-video="https://www.youtube.com/embed/LM2kxpwQ3sA">
+                        <img src="assets/img/terabox.jpg" alt class="projects__img">
 
+                        <div class="projects__modal">
+                            <div>
+                                <span class="projects__subtitle">Telegram</span>
+                                <h3 class="projects__title">Terabox Downloader</h3>
+                                <p class="project__description">Introducing the terabox videos downloader telegram bot. You can download videos from terabox on telegram using your terabox link. Coded in python (on github) hosted on heroku. Simply checkout preview for better understandment. If you want code of this kindly ask for code.</p>
+                                <a href="#" class="projects__button button button__small view-details">Unlock Now <i class="ri-rotate-lock-fill"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="projects__card" data-link="https://t.me/pavanmagar" data-preview="https://t.me/codexun" data-video="https://www.youtube.com/embed/LM2kxpwQ3sA">
+                        <img src="assets/img/music.jpg" alt class="projects__img">
+
+                        <div class="projects__modal">
+                            <div>
+                                <span class="projects__subtitle">Telegram</span>
+                                <h3 class="projects__title">Music Bot</h3>
+                                <p class="project__description">Introducing the telegram music bot. Helps to play music on telegram group voice chat from youtube. Coded in python (on github) hosted on heroku. Simply checkout preview for better understandment. If you want code of this kindly ask for code.</p>
+                                <a href="#" class="projects__button button button__small view-details">Unlock Now <i class="ri-rotate-lock-fill"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="projects__card" data-link="https://t.me/pavanmagar" data-preview="https://creatorpavan.eu.org" data-video="https://www.youtube.com/embed/LM2kxpwQ3sA">
+                        <img src="assets/img/portfolio.jpg" alt class="projects__img">
+
+                        <div class="projects__modal">
+                            <div>
+                                <span class="projects__subtitle">Web</span>
+                                <h3 class="projects__title">Portfolio Site</h3>
+                                <p class="project__description">Introducing the portfolio website. A simple UI based portfolio website for personal about information. Coded in html, css and js (on github) hostable on github-pages. Simply checkout preview for better understandment. If you want code of this kindly ask for code. [this website is preview website] </p>
+                                <a href="#" class="projects__button button button__small view-details">Unlock Now <i class="ri-rotate-lock-fill"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="projects__card" data-link="https://t.me/pavanmagar" data-preview="https://t.me/dotexrequest" data-video="https://www.youtube.com/embed/v=xxLjUeVPYYk">
+                        <img src="assets/img/movies.jpg" alt class="projects__img">
+                        <div class="projects__modal">
+                            <div>
+                                <span class="projects__subtitle">Telegram</span>
+                                <h3 class="projects__title">Movies Search Bot</h3>
+                                <p class="project__description">Introducing telegram movies search bot. Bot which helps to search movies, uses filter bot function which uses your movies channel as movies database to search. Coded in python (on github) hosted on heroku.Simply checkout preview for better understandment. If you want code of this kindly ask for code.</p>
+                                <a href="#" class="projects__button button button__small view-details">Unlock Now <i class="ri-rotate-lock-fill"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- =============About ========= -->
+                <div class="about__content grid" data-content id="about">
+                    <div class="about__area">
+                        <h3 class="about__title">
+                            Know More About Me
+                        </h3>
+
+                        <div class="about__box">
+                            <div class="about__group">
+                                <div class="about__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="about__name">I'm Pavan Magar</h3>
+                                        <span class="about__level">From Maharashtra, India with focus on software and web development. Here's a goal-driven creative mindset to solve the problems and passion for learning and innovating new things in a world of development.</span>
+                                    </div>
+                                </div>
+
+                                <div class="about__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="about__name">Studied at</h3>
+                                        <span class="about__level">Got introduced to programming in my freshman year at The Swami Ramanand Teerth Marathwada University, Nanded MH. Where I completed my Bachelors of Computer Applications in year 2020-2022 with 86.3% aggregate.</span>
+                                    </div>
+                                </div>
+
+                                <div class="about__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="about__name">Skilled in</h3>
+                                        <span class="about__level">Specially skilled in web dev and devops. Some other technologies that I'm familiar with are react, php, mysql, node js, python, git etc.</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--=============== SKILLS ===============-->
+                <div class="skills__content grid" data-content id="skills">
+                    <div class="skills__area">
+                        <h3 class="skills__title">
+                            Fronted developer
+                        </h3>
+
+                        <div class="skills__box">
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="skills__name">HTML</h3>
+                                        <span class="skills__level">Basic</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="skills__name">CSS</h3>
+                                        <span class="skills__level">Basic</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="skills__name">JavaScript</h3>
+                                        <span class="skills__level">Basic</span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="skills__name">React</h3>
+                                        <span class="skills__level">Basic</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="skills__name">Bootstramp</h3>
+                                        <span class="skills__level">Basic</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="skills__name">Git</h3>
+                                        <span class="skills__level">Basic</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills__area">
+                        <h3 class="skills__title">
+                            Backend developer
+                        </h3>
+
+                        <div class="skills__box">
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="skills__name">PHP</h3>
+                                        <span class="skills__level">Basic</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="skills__name">MySQL</h3>
+                                        <span class="skills__level">Basic</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="skills__name">Firebase</h3>
+                                        <span class="skills__level">Basic</span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="skills__name">Python</h3>
+                                        <span class="skills__level">Basic</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="skills__name">Node Js</h3>
+                                        <span class="skills__level">Basic</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="skills__name">AWS</h3>
+                                        <span class="skills__level">Basic</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <!--=============== FOOTER ===============-->
     <footer class="footer container">
         <span class="footer__copy">
@@ -86,10 +313,10 @@
             &#169; 2024 - Pavan Magar. All rights reserved.
         </span>
     </footer>
-
     <!--=============== SCROLLREVEAL ===============-->
     <script src="assets/js/scrollreveal.min.js"></script>
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
+    <!--=============== MAIN JS ===============-->
 </body>
 </html>

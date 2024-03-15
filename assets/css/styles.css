@@ -553,7 +553,9 @@ body.dark-theme{
  /* Adjust popup modal size for desktop devices */
 @media screen and (min-width: 768px) {
     .popup-content {
-        max-width: 60%; /* Adjust as needed */
+        max-width: 60%; /* Adjust width as needed */
+        max-height: 80%; /* Adjust height as needed */
+        overflow-y: auto; /* Enable vertical scrolling if content overflows */
     }
 }
 

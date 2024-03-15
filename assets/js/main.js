@@ -65,14 +65,16 @@ themeButton.addEventListener("click", () => {
         popupModal.classList.add('popup-modal');
 
         // Function to create the popup modal content
-        function createPopupContent(title, description, image, link, preview) {
+        function createPopupContent(title, description, videoLink, link, preview) {
             const popupContent = document.createElement('div');
             popupContent.classList.add('popup-content');
 
             popupContent.innerHTML = `
                 <span class="close-btn">&times;</span>
                 <h3>${title}</h3>
-                <img src="${image}" class="popup-image" alt="Project Image">
+                <div class="video-container">
+                    <iframe width="560" height="315" src="${videoLink}" frameborder="0" allowfullscreen></iframe>
+                </div>
                 <p>${description}</p>
                 <a href="${preview}" class="projects__button button button__small" target="_blank">Preview <i class="ri-eye-line"></i></a>
                 <a href="${link}" class="projects__button button button__small" target="_blank">Ask for code <i class="ri-arrow-right-circle-line"></i></a>
@@ -82,8 +84,8 @@ themeButton.addEventListener("click", () => {
         }
 
         // Function to open the popup modal
-        function openPopup(title, description, image, link, preview) {
-            const popupContent = createPopupContent(title, description, image, link, preview);
+        function openPopup(title, description, videoLink, link, preview) {
+            const popupContent = createPopupContent(title, description, videoLink, link, preview);
             popupModal.innerHTML = '';
             popupModal.appendChild(popupContent);
             document.body.appendChild(popupModal);
@@ -105,10 +107,10 @@ themeButton.addEventListener("click", () => {
                 event.preventDefault();
                 const title = this.parentElement.querySelector('.projects__title').textContent;
                 const description = this.parentElement.querySelector('.project__description').textContent;
-                const image = this.closest('.projects__card').dataset.image;
+                const videoLink = this.closest('.projects__card').dataset.video;
                 const link = this.closest('.projects__card').dataset.link;
                 const preview = this.closest('.projects__card').dataset.preview;
-                openPopup(title, description, image, link, preview);
+                openPopup(title, description, videoLink, link, preview);
             });
         });
 

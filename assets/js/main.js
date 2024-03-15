@@ -76,8 +76,8 @@ themeButton.addEventListener("click", () => {
                     <iframe width="560" height="315" src="${videoLink}" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <p>${description}</p>
-                <a href="${preview}" class="projects__button button button__small" target="_blank">Preview <i class="ri-eye-line"></i></a>
-                <a href="${link}" class="projects__button button button__small" target="_blank">Visit Project <i class="ri-arrow-right-circle-line"></i></a>
+                <a href="${preview}" class="projects__button button button__small" target="_blank">Demo <i class="ri-eye-line"></i></a>
+                <a href="${link}" class="projects__button button button__small" target="_blank">Ask for code <i class="ri-arrow-right-circle-line"></i></a>
             `;
 
             return popupContent;
@@ -96,10 +96,12 @@ themeButton.addEventListener("click", () => {
             closeButton.addEventListener('click', closePopup);
         }
 
-        // Function to close the popup modal
+        // Function to close the popup modal and stop the video
         function closePopup() {
-            popupModal.style.display = 'none';
-        }
+               const iframe = popupModal.querySelector('iframe');
+               iframe.src = iframe.src; // Stop the video by resetting the source
+               popupModal.style.display = 'none';
+}
 
         // Attach event listener to each view-details button
         viewButtons.forEach(button => {
@@ -117,6 +119,8 @@ themeButton.addEventListener("click", () => {
         // Close modal when clicking outside the content area
         window.addEventListener('click', (e) => {
             if (e.target === popupModal) {
+               const iframe = popupModal.querySelector('iframe');
+               iframe.src = iframe.src; // Stop the video by resetting the source
                 popupModal.style.display = 'none';
             }
         });

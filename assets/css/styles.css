@@ -559,6 +559,16 @@ body.dark-theme{
     }
 }
 
+/* CSS for scroll reminder */
+.scroll-reminder {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 14px;
+}
+
 /*=============== FOOTER ===============*/
 .footer__copy{
   display: block;

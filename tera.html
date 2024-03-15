@@ -311,6 +311,17 @@
             &#169; 2024 - Pavan Magar. All rights reserved.
         </span>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutButton = document.querySelector('[data-target="#about"]');
+            const articleTitle = "article-title-name"; // Replace with actual article title
+
+            aboutButton.addEventListener('click', function() {
+                const newURL = window.location.origin + '/' + articleTitle + '.html';
+                history.pushState(null, null, newURL);
+            });
+        });
+    </script>
     <!--=============== SCROLLREVEAL ===============-->
     <script src="assets/js/scrollreveal.min.js"></script>
     <!--=============== MAIN JS ===============-->

@@ -567,12 +567,7 @@ body.dark-theme{
 .projects__github-message {
     text-align: center;
     margin-top: 12px;
-    font-size: 8px;
-}
-@media (min-width: 768px) {
-    .projects__github-message {
-        text-align: center;
-    }
+    font-size: 18px;
 }
 /*=============== FOOTER ===============*/
 .footer__copy{

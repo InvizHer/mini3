@@ -13,8 +13,19 @@
         /* Main */
         .main {
             padding: 20px;
-            opacity: 0; /* Set opacity to 0 initially */
-            transition: opacity 0.5s ease; /* Smooth transition for opacity */
+            opacity: 0;
+            animation: slide-up 0.5s ease forwards;
+        }
+
+        @keyframes slide-up {
+            0% {
+                opacity: 0;
+                transform: translateY(50px); /* Start from 50px down */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0); /* End at original position */
+            }
         }
 
         .article__container {
@@ -22,8 +33,6 @@
             margin: 0 auto; /* Center the article container horizontally */
             padding: 20px;
             box-sizing: border-box; /* Include padding in the width calculation */
-            opacity: 0; /* Set opacity to 0 initially */
-            transition: opacity 0.5s ease; /* Smooth transition for opacity */
         }
 
         .article__heading {
@@ -31,22 +40,17 @@
             margin-bottom: 10px;
             text-align: center; /* Center align the heading */
             color: #333; /* Gray color */
-            transition: opacity 0.5s ease; /* Smooth transition for opacity */
         }
 
         .article__image {
             width: 100%;
             height: auto;
             margin-bottom: 20px;
-            opacity: 0; /* Set opacity to 0 initially */
-            transition: opacity 0.5s ease; /* Smooth transition for opacity */
         }
 
         .article__text {
             margin-bottom: 10px;
             color: #555; /* Dark gray color for text */
-            opacity: 0; /* Set opacity to 0 initially */
-            transition: opacity 0.5s ease; /* Smooth transition for opacity */
         }
 
         .go-back {
@@ -61,29 +65,9 @@
             transition: opacity 0.5s ease; /* Smooth transition for opacity */
         }
 
-        /* Show elements when main is visible */
-        .main.show {
-            opacity: 1;
-        }
-
-        .article__container.show {
-            opacity: 1;
-        }
-
-        .article__heading.show {
-            opacity: 1;
-        }
-
-        .article__image.show {
-            opacity: 1;
-        }
-
-        .article__text.show {
-            opacity: 1;
-        }
-
-        .go-back.show {
-            opacity: 1;
+        .go-back a {
+            color: inherit;
+            text-decoration: none;
         }
     </style>
     <title>Pavan Magar - Latest Article Title</title>
@@ -130,14 +114,7 @@
     <script>
         // Add 'show' class to elements to trigger animation
         document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector('.main').classList.add('show');
-            document.querySelector('.article__container').classList.add('show');
-            document.querySelector('.article__heading').classList.add('show');
-            document.querySelector('.article__image').classList.add('show');
-            document.querySelectorAll('.article__text').forEach(function(element) {
-                element.classList.add('show');
-            });
-            document.querySelector('.go-back').classList.add('show');
+            document.querySelector('.main').style.opacity = '1';
         });
     </script>
 </body>

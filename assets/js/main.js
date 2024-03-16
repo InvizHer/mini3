@@ -120,6 +120,7 @@ const sr = ScrollReveal({
   distance: "60px",
   duration: 2500,
   delay: 400,
+  opacity: 1,
 });
 
 sr.reveal(".profile__border");

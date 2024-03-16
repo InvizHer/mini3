@@ -148,28 +148,27 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-        // Add 'show' class to elements to trigger animation
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector('.main').style.opacity = '1';
-            document.querySelector('.article__container').style.opacity = '1';
-            document.querySelector('.headr').style.opacity = '1';
-        });
+    // Add 'show' class to elements to trigger animation
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector('.main').style.opacity = '1';
+        document.querySelector('.article__container').style.opacity = '1';
+        document.querySelector('.headr').style.opacity = '1';
+    });
 
-        // Sticky Header
-        window.onscroll = function() {stickyHeader()};
-
+    // Sticky Header
+    window.addEventListener("scroll", function() {
         var header = document.querySelector("header");
         var profileData = document.querySelector(".profile__data");
-
-        function stickyHeader() {
-            if (window.pageYOffset > header.offsetTop) {
-                header.classList.add("header-sticky");
-                profileData.style.display = "none";
-            } else {
-                header.classList.remove("header-sticky");
-                profileData.style.display = "block";
-            }
+        
+        if (window.scrollY > header.offsetHeight) {
+            header.classList.add("header-sticky");
+            profileData.style.display = "none";
+        } else {
+            header.classList.remove("header-sticky");
+            profileData.style.display = "block";
         }
-    </script>
+    });
+</script>
+
 </body>
 </html>

@@ -70,6 +70,29 @@
             border-radius: 10px;
             transition: opacity 1.5s ease; /* Smooth transition for opacity */
         }
+
+        /* Sticky Header */
+        .header-sticky {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000; /* Ensure it's above other elements */
+        }
+
+        .profile__container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .profile__data {
+            display: none; /* Hide the profile data */
+        }
+
+        .profile__name,
+        .profile__profession {
+            margin: 0;
+        }
     </style>
     <title>Pavan Magar - Latest Article Title</title>
 </head>
@@ -101,7 +124,7 @@
             <h1 class="article__heading">Terabox downloader - InvizHer</h1>
             <div class="article__content">
                 <p class="article__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum, diam sed tempor viverra, nulla sapien feugiat metus, vel fermentum odio magna sit amet ex. Cras id neque at odio iaculis tempor. Vivamus non nisl risus. Integer tincidunt ligula quis ipsum porta, nec auctor velit fermentum. Nullam eu fermentum mauris.</p>
-            <img src="assets/img/terabox.jpg" alt="Article Image" class="article__image">
+                <img src="assets/img/terabox.jpg" alt="Article Image" class="article__image">
                 <p class="article__text">Nullam imperdiet arcu in sapien tincidunt, vitae eleifend odio faucibus. Phasellus at feugiat purus, vel aliquam arcu. Sed ut turpis eleifend, ullamcorper leo sed, pharetra nisl. Vivamus non augue eget lorem suscipit venenatis. Ut convallis metus vel nunc dictum gravida. Proin tincidunt ex vitae libero fermentum, ut dapibus elit gravida.</p>
             </div>
         </div>
@@ -118,7 +141,8 @@
             &#169; 2024 - Pavan Magar. All rights reserved.
         </span>
     </footer>
-     <!--=============== SCROLLREVEAL ===============-->
+
+    <!--=============== SCROLLREVEAL ===============-->
     <script src="assets/js/scrollreveal.min.js"></script>
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
@@ -130,6 +154,22 @@
             document.querySelector('.article__container').style.opacity = '1';
             document.querySelector('.headr').style.opacity = '1';
         });
+
+        // Sticky Header
+        window.onscroll = function() {stickyHeader()};
+
+        var header = document.querySelector("header");
+        var profileData = document.querySelector(".profile__data");
+
+        function stickyHeader() {
+            if (window.pageYOffset > header.offsetTop) {
+                header.classList.add("header-sticky");
+                profileData.style.display = "none";
+            } else {
+                header.classList.remove("header-sticky");
+                profileData.style.display = "block";
+            }
+        }
     </script>
 </body>
 </html>

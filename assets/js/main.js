@@ -114,8 +114,10 @@ themeButton.addEventListener("click", () => {
                 popupModal.style.display = 'none';
             }
         });
-document.addEventListener("DOMContentLoaded", function() {
+
     /*=============== SCROLL REVEAL ANIMATION ===============*/
+
+document.addEventListener("DOMContentLoaded", function() {
     const sr = ScrollReveal({
         origin: "top",
         distance: "60px",
@@ -132,4 +134,3 @@ document.addEventListener("DOMContentLoaded", function() {
     sr.reveal(".filters__content", { delay: 900 });
     sr.reveal(".filters", { delay: 1000 });
 });
-

@@ -118,6 +118,7 @@ themeButton.addEventListener("click", () => {
     /*=============== SCROLL REVEAL ANIMATION ===============*/
 
 document.addEventListener("DOMContentLoaded", function() {
+            /*=============== SCROLL REVEAL ANIMATION ===============*/
             const sr = ScrollReveal({
                 origin: "top",
                 distance: "60px",
@@ -134,10 +135,11 @@ document.addEventListener("DOMContentLoaded", function() {
             sr.reveal(".filters__content", { delay: 900 });
             sr.reveal(".filters", { delay: 1000 });
 
-            // Once all animations are complete, show the content
+            // Show content after all animations are complete
             sr.reveal(".filters", { delay: 1000, complete: function() {
-                document.querySelector('.profile').classList.remove("hidden");
-                document.querySelector('.main').classList.remove("hidden");
-                document.querySelector('.footer__copy').classList.remove("hidden");
+                document.querySelector('.main').style.opacity = '1';
+                document.querySelector('.article__container').style.opacity = '1';
+                document.querySelector('.headr').style.opacity = '1';
             }});
         });
+    </script>

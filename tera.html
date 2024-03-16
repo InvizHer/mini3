@@ -147,7 +147,7 @@
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
 
-    <script>
+   <script>
     // Add 'show' class to elements to trigger animation
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.main').style.opacity = '1';
@@ -156,11 +156,12 @@
     });
 
     // Sticky Header
+    var header = document.querySelector("header");
+    var profileData = document.querySelector(".profile__data");
+    var headerOffsetTop = header.offsetTop + header.offsetHeight;
+
     window.addEventListener("scroll", function() {
-        var header = document.querySelector("header");
-        var profileData = document.querySelector(".profile__data");
-        
-        if (window.scrollY > header.offsetHeight) {
+        if (window.scrollY > headerOffsetTop) {
             header.classList.add("header-sticky");
             profileData.style.display = "none";
         } else {
@@ -169,6 +170,7 @@
         }
     });
 </script>
+
 
 </body>
 </html>

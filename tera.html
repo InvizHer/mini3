@@ -14,27 +14,7 @@
         .main {
             padding: 20px;
         }
-   
-        .profile {
-            position: sticky;
-            top: 0;
-            background-color: var(--body-color);
-            z-index: 1000; /* Ensure the header stays on top of other content */
-            padding-top: 0.9rem;
-            transition: all 0.3s ease; /* Smooth transition for sticky effect */
-        }
-
-        .profile__name {
-          color: #333;
-        }
-        .dark-theme .profile__name {
-        color: hsl(var(--hue), 12%, 95%);
-        }
-
-        .profile__profession {
-          margin-bottom: 0.7rem;
-        }
-
+        
         .article__container {
             max-width: 800px; /* Adjust the maximum width as needed */
             margin: 0 auto; /* Center the article container horizontally */
@@ -163,18 +143,12 @@
 </head>
 <body>
     <!--=============== HEADER PROFILE ===============-->
-    <header class="profile container headr">
-        <!-- Theme button -->
-       
-        <div class="profile__container grid">
-            <div class="profile__data"> 
+    <header class="profile container headr"> 
+        
                 <a href="https://creatorpavan.eu.org"><i class="ri-arrow-left-circle-line go-back"></i></a>
-                <h2 class="profile__name">Pavan Magar</h2>
-                <h2 class="profile__profession">WebDev | DevOps </h2>
                 
         <i class="ri-moon-line change-theme" id="theme-button"></i>
-            </div>
-        </div>
+        
     </header>
 
     <!--=============== MAIN ===============-->

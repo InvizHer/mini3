@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/my-avatar.png" type="image/x-icon" class="favicon">
+
+    <!--=============== REMIX ICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Pavan Magar</title>
+</head>
+<body>
+    <!--=============== HEADER PROFILE ===============-->
+    <header class="profile container">
+        <!-- Theme button -->
+        <i class="ri-moon-line change-theme" id="theme-button"></i>
+    </header>
+    <!--=============== MAIN ===============-->
+    <main class="main">
+        <!--=============== ARTICLE ===============-->
+        <div class="article__container">
+            <h1 class="article__heading">Terabox Downloader</h1>
+            <div class="article__content">
+            <p class="article__info">Posted on <span id="posted-date">20.03.2024</span> by <span id="author-name">Pavan Magar.</span></p>
+                <p class="article__text">In this article you will understand the topics like what is the terabox downloader, how terabox downloader works, how to use terabox downloader etc. At the end of article you can get a demo of terabox downloader and also you can ask us for code of terabox downloader. So let's get start it.</p>
+        <!---    <img src="assets/img/terabox.jpg" alt="Article Image" class="article__image">  ---->
+                <p class="article__text">In short, Terabox downloader is a telegram bot which can help you to download videos from terabox links. You just need to send your terabox video link to bot and bot will download video from terabox server and will send that video to you.</p>
+                <p class="article__text">If you want to know how this bot works so listen, this bot accept terabox video link from user then fetches that link data from terabox server using their terabox api and cookis of trabox. Then starts to download that video. if any error occures then bot will show that to you and if not then bot will send you video in few seconds.</p>
+                <p class="article__text">You can see demo of this project by using following demo button and also if you are intrested to checkout the code of this project and wants the code of this project then ask author for code by using ask code button below.</p>
+                <div class="article__buttons">
+                <a href="https://telegram.me/boxgramrobot" class="article__button">Get Demo</a>
+                <a href="https://telegram.me/pavanmagar" class="article__button">Ask for Code</a>
+            </div>
+            </div>
+        </div>
+    </main>
+    <!--=============== FOOTER ===============-->
+    <footer class="footer container">
+        <span class="footer__copy">
+            <ul class="profile__social">
+                <li><a href="https://www.instagram.com/invizher" target="_blank" class="profile__social-link"><i class="ri-instagram-line"></i></a></li>
+                <li><a href="https://github.com/PavanMagar" target="_blank" class="profile__social-link"><i class="ri-github-fill"></i></a></li>
+                <li><a href="https://t.me/PavanMagar" target="_blank" class="profile__social-link"><i class="ri-telegram-line"></i></a></li>
+            </ul>
+            &#169; 2024 - Pavan Magar. All rights reserved.
+        </span>
+    </footer>
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+    <!--=============== MAIN JS ===============-->
+</body>
+</html>

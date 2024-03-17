@@ -134,8 +134,46 @@
 
         .headr {
             opacity: 0;
-            border-bottom: 1px solid gray;
             transition: opacity 1.5s ease; /* Smooth transition for opacity */
+        }
+
+        @media (max-width: 1024px) {
+            .article__image {
+                width: 80%; /* Reduce image width for tablets */
+                margin-left: 10%; /* Adjust margin for tablets */
+            }
+
+            .article__container {
+                max-width: 90%; /* Adjust container width for tablets */
+            }
+
+            .article__heading {
+                font-size: 20px; /* Adjust font size for tablets */
+            }
+
+            .article__text {
+                font-size: 0.9rem; /* Adjust font size for tablets */
+            }
+        }
+
+        /* Styles for mobile-sized devices */
+        @media (max-width: 649px) {
+            .article__image {
+                width: 100%; /* Adjust image width for mobile */
+                margin-left: 0; /* Remove left margin for mobile */
+            }
+
+            .article__container {
+                padding: 10px; /* Adjust padding for mobile */
+            }
+
+            .article__heading {
+                font-size: 18px; /* Adjust font size for mobile */
+            }
+
+            .article__text {
+                font-size: 0.85rem; /* Adjust font size for mobile */
+            }
         }
 
     </style>

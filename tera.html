@@ -11,161 +11,177 @@
     <!--=============== CSS ===============-->
     <style>
         /* Main */
-        .main {
-            margin-top: 10px;
-            padding: 12px;
-        }
-   
-        .profile {
-            position: sticky;
-            top: 0;
-            z-index: 1000; /* Ensure the header stays on top of other content */
-            padding-top: 0.5rem;
-            transition: all 0.3s ease; /* Smooth transition for sticky effect */
-        }
+.main {
+    margin-top: 10px;
+    padding: 12px;
+}
 
-        .profile__name {
-            color: #333;
-            margin-bottom: 11px;
-            margin-top: 10px;
-        }
+/* Profile */
+.profile {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding-top: 0.5rem;
+    transition: all 0.3s ease;
+}
 
-        .container {
-          max-width: none;
-          margin-left: 0;
-          margin-right: 0;
-        }
+.profile__name {
+    color: #333;
+    margin-bottom: 11px;
+    margin-top: 10px;
+}
 
-        .article__container {
-            max-width: 800px; /* Adjust the maximum width as needed */
-            margin: 0 auto; /* Center the article container horizontally */
-            padding: 14px;
-            box-sizing: border-box; /* Include padding in the width calculation */
-            opacity: 0; /* Set opacity to 0 initially */
-            animation: slideIn 1.5s ease forwards; /* Smooth animation for sliding up */
-        }
+.container {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-       
-        
-       .article__heading {
-            font-size: 18px; /* Increased font size */
-            margin-bottom: 4px;
-            text-align: left; /* Center align the heading */
-            color: #333; /* Gray color */
-        }
+/* Article */
+.article__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 14px;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: slideIn 1.5s ease forwards;
+}
 
-        .article__info {
-          font-size: 0.75rem; /* Adjust font size as needed */
-          color: #888; /* Adjust color as needed */
-          margin-bottom: 12px; /* Adjust margin as needed */
-        } 
-
-        .article__image {
-            width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        .article__text {
-            margin-bottom: 12px;
-            font-size: 0.92rem;
-            color: #555; /* Dark gray color for text */
-        }
-
-
-             .dark-theme .profile__name {
-        color: hsl(var(--hue), 12%, 95%);
-        }
-         
-        .dark-theme .article__heading {
-        color: hsl(var(--hue), 12%, 95%);
-        }
-        .dark-theme .article__text {
-            color: hsl(var(--hue), 12%, 75%);
-        }
-        .dark-theme .article__button {
-            color: hsl(var(--hue), 12%, 75%);
-        }
-
-        
-        /* Styles for desktop-sized devices */
-@media (min-width: 650px) {
-    .article__image {
-        width: 50%; /* Set width to 50% for desktop-sized devices */
-        margin-left: 20%; /* Adjust margin-left */
-        margin-bottom: 20px; /* Set margin-bottom */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
     }
-    
-    .article__heading {
-        font-size: 22px;
-    }
-    
-    .article__text {
-        font-size: 0.95rem;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-        .article__buttons {
+.article__heading {
+    font-size: 18px;
+    margin-bottom: 4px;
+    text-align: left;
+    color: #333;
+}
+
+.article__info {
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 12px;
+}
+
+.article__image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.article__text {
+    margin-bottom: 12px;
+    font-size: 0.92rem;
+    color: #555;
+}
+
+.article__buttons {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Adjust spacing between buttons */
+    gap: 10px;
 }
 
 .article__button {
     display: block;
     width: 100%;
     padding: 10px;
-    border: 1px solid #333; /* Border color */
+    border: 1px solid #333;
     text-align: center;
     text-decoration: none;
-    color: #333; /* Button text color */
+    color: #333;
     transition: background-color 0.3s ease;
 }
 
 .article__button:hover {
-    background-color: #eee; /* Hover background color */
+    background-color: #eee;
 }
 
-        .go-back {
-            position: absolute;
-            top: 1.2rem;
-            left: 0;
-            margin-left: 20px;
-            margin-right: auto;
-            font-size: 1.5rem;
-            color: hsl(var(--hue), var(--sat), var(--lig));
-            cursor: pointer;
-            transition: opacity 1.5s ease; /* Smooth transition for opacity */
-        }
+/* Footer */
+.footer {
+    border-top: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
 
-        .change-theme {
-            position: absolute;
-            top: 1.2rem;
-            right: 0;
-            margin-right: 20px;
-            font-size: 1.25rem;
-            color: hsl(var(--hue), var(--sat), var(--lig));
-            cursor: pointer;
-            transition: .3s;
-        }
+.footer__copy {
+    font-size: 0.8rem;
+}
 
-        .headr {
-            opacity: 0;
-            border-bottom: 1px solid gray;
-            border-radius: 10px;
-            transition: opacity 1.5s ease; 
-            background-color: aliceblue;
-        }
+.profile__social {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile__social-link {
+    color: #333;
+    font-size: 1.5rem;
+    margin: 0 5px;
+}
+
+/* Responsive Styles */
+@media (min-width: 650px) {
+    .article__image {
+        width: 50%;
+        margin-left: 20%;
+        margin-bottom: 20px;
+    }
+
+    .article__heading {
+        font-size: 22px;
+    }
+
+    .article__text {
+        font-size: 0.95rem;
+    }
+}
+
+.dark-theme .profile__name,
+.dark-theme .article__heading,
+.dark-theme .article__text,
+.dark-theme .article__button {
+    color: hsl(var(--hue), 12%, 75%);
+}
+
+.go-back {
+    position: absolute;
+    top: 1.2rem;
+    left: 0;
+    margin-left: 20px;
+    margin-right: auto;
+    font-size: 1.5rem;
+    color: hsl(var(--hue), var(--sat), var(--lig));
+    cursor: pointer;
+    transition: opacity 1.5s ease;
+}
+
+.change-theme {
+    position: absolute;
+    top: 1.2rem;
+    right: 0;
+    margin-right: 20px;
+    font-size: 1.25rem;
+    color: hsl(var(--hue), var(--sat), var(--lig));
+    cursor: pointer;
+    transition: .3s;
+}
+
+.headr {
+    opacity: 0;
+    border-bottom: 1px solid gray;
+    border-radius: 10px;
+    transition: opacity 1.5s ease;
+    background-color: aliceblue;
+}
+
 
     </style>
     <title>Terabox Downloader</title>

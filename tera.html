@@ -25,8 +25,18 @@
         }
 
         .profile__name {
-          color: #333;
+            color: #333;
+            margin-bottom: 10px;
+            margin-top: 10px;
         }
+
+        .container {
+          max-width: none;
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        
         .dark-theme .profile__name {
         color: hsl(var(--hue), 12%, 95%);
         }
@@ -133,7 +143,7 @@
             position: absolute;
             top: 1.9rem;
             left: 0;
-            margin-left: 10px;
+            margin-left: 20px;
             margin-right: auto;
             font-size: 1.5rem;
             color: hsl(var(--hue), var(--sat), var(--lig));
@@ -145,7 +155,7 @@
             position: absolute;
             top: 1.9rem;
             right: 0;
-            margin-right: 10px;
+            margin-right: 20px;
             font-size: 1.25rem;
             color: hsl(var(--hue), var(--sat), var(--lig));
             cursor: pointer;
@@ -155,7 +165,9 @@
         .headr {
             opacity: 0;
             border-bottom: 1px solid gray;
-            transition: opacity 1.5s ease; /* Smooth transition for opacity */
+            border-bottom: 1px solid gray;
+            transition: opacity 1.5s ease; 
+            background-color: aliceblue;
         }
 
     </style>

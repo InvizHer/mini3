@@ -57,7 +57,7 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
 
-// Get all view-details buttons
+        // Get all view-details buttons
         const viewButtons = document.querySelectorAll('.view-details');
 
         // Get the popup modal and its content
@@ -65,23 +65,27 @@ themeButton.addEventListener("click", () => {
         popupModal.classList.add('popup-modal');
 
         // Function to create the popup modal content
-        function createPopupContent(title, description, link) {
+        function createPopupContent(title, description, videoLink, link, preview) {
             const popupContent = document.createElement('div');
             popupContent.classList.add('popup-content');
 
             popupContent.innerHTML = `
                 <span class="close-btn">&times;</span>
                 <h3>${title}</h3>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="${videoLink}" frameborder="0" allowfullscreen></iframe>
+                </div>
                 <p>${description}</p>
-                <a href="${link}" class="projects__button button button__small" target="_blank">Know more <i class="ri-arrow-right-circle-line"></i></a>
+                <a href="${preview}" class="projects__button button button__small" target="_blank">Demo <i class="ri-eye-line"></i></a>
+                <a href="${link}" class="projects__button button button__small" target="_blank">Ask for code <i class="ri-arrow-right-circle-line"></i></a>
             `;
 
             return popupContent;
         }
 
         // Function to open the popup modal
-        function openPopup(title, description, link) {
-            const popupContent = createPopupContent(title, description, link);
+        function openPopup(title, description, videoLink, link, preview) {
+            const popupContent = createPopupContent(title, description, videoLink, link, preview);
             popupModal.innerHTML = '';
             popupModal.appendChild(popupContent);
             document.body.appendChild(popupModal);
@@ -92,10 +96,12 @@ themeButton.addEventListener("click", () => {
             closeButton.addEventListener('click', closePopup);
         }
 
-        // Function to close the popup modal
+        // Function to close the popup modal and stop the video
         function closePopup() {
-            popupModal.style.display = 'none';
-        }
+               const iframe = popupModal.querySelector('iframe');
+               iframe.src = iframe.src; // Stop the video by resetting the source
+               popupModal.style.display = 'none';
+}
 
         // Attach event listener to each view-details button
         viewButtons.forEach(button => {
@@ -103,19 +109,23 @@ themeButton.addEventListener("click", () => {
                 event.preventDefault();
                 const title = this.parentElement.querySelector('.projects__title').textContent;
                 const description = this.parentElement.querySelector('.project__description').textContent;
+                const videoLink = this.closest('.projects__card').dataset.video;
                 const link = this.closest('.projects__card').dataset.link;
-                openPopup(title, description, link);
+                const preview = this.closest('.projects__card').dataset.preview;
+                openPopup(title, description, videoLink, link, preview);
             });
         });
 
         // Close modal when clicking outside the content area
         window.addEventListener('click', (e) => {
             if (e.target === popupModal) {
+               const iframe = popupModal.querySelector('iframe');
+               iframe.src = iframe.src; // Stop the video by resetting the source
                 popupModal.style.display = 'none';
             }
         });
 
-    /*=============== SCROLL REVEAL ANIMATION ===============*/
+/*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({
   origin: "top",
   distance: "60px",

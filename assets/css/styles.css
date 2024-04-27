@@ -363,6 +363,9 @@ body.dark-theme{
 
 .projects__button{
   padding: .5rem;
+  position: absolute;
+  top: 10px; /* Adjust this value as needed */
+  right: 10px; /* Adjust this value as needed */
 }
 
 /*=============== ABOUT ===============*/

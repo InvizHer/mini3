@@ -74,7 +74,7 @@ themeButton.addEventListener("click", () => {
                 <h3>${title}</h3>
                 <img src="${image}" class="popup-image" alt="Project Image">
                 <p>${description}</p>
-                <a href="${preview}" class="projects__button button button__small" target="_blank">Demo <i class="ri-sparkling-line"></i></a>
+                <a href="${preview}" class="projects__button button button__small" target="_blank">Demo </a>
                 <a href="${link}" class="projects__button button button__small" target="_blank">Get Code <i class="ri-arrow-right-circle-line"></i></a>
             `;
 

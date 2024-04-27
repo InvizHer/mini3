@@ -337,7 +337,7 @@ body.dark-theme{
   bottom: 0;
   left: 0;
   border: 10px solid gainsboro;
-  border-radius: 30px;
+  border-radius: 20px;
   background: linear-gradient(180deg,
               hsla(var(--hue), 24%, 40%, .3) 0%,
               hsla(var(--hue), 24%, 4%, 1) 95%);
